@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Redesign</title>
+    <link rel = "icon" href = "IMG/NetflixNLOGO.svg" type = "image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="\Home.css">
+    </head>
+
+<body>
+    <div class="container">
+            <header>
+                    <a href="Home.html">
+                    <img src="IMG/NetflixLogoFULL.svg" class="logo" alt="logo">
+                    </a>
+                <nav>
+                    <a href="#" class="hide-desktop">
+                    <img src="IMG/Mag.svg" alt="magnifier" class="mag" id="mag">
+                    <img src="IMG/HamMENU.svg" alt="toggle menu" class="menu" id="menu">
+                    </a>
+
+                    <ul class="show-desktop hide-mobile" id="nav">
+
+                        <div class="top-menu">
+
+                        <li id="search" class="search-btn">
+                            <img src="IMG/Mag.svg" href="xxx" alt="search" class="search" id="search">
+                        </li>
+                        
+                        <li id="exit" class="exit-btn hide-desktop">
+                            <img src="IMG/Close.svg" alt="close menu">
+                        </li>
+
+                        </div>
+
+                        <li class="Home">
+                            <a href="Home.html">Home</a>
+                        </li>
+
+                        <li class="Shows">
+                            <a href="videoplayer.html">Shows &amp; Films</a>
+                        </li>
+
+                        <li class="Logout">
+                            <a href="login.html">Log Out</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </header>
+
+            <article>
+                <section class="first-intro">
+                    <img src="IMG/Squid01.png" class="first-img">
+                <div class="first-block">
+                    <img src="IMG/SquidLOGO.png" class="squid-logo">
+                    <div class="text-block">
+                    <p class="sub">As alliances form among the players, no one is safe in the dorm after lights-out. The third game challenges Gi-hun’s team to think strategically.</p>
+                    <a onclick="openvideo('move5.mp4')">
+                        <img src="IMG/PlayBUTTON.svg" class="play">
+                    </a>
+                    </div>
+                </div>
+                </section>
+
+                <section class="redblock01"></section>
+
+                <section class="second-intro">
+                    <img src="IMG/RecentWATCH.png" class="recent">
+                    <div class="tiles">
+                        <img src="IMG/Show01.jpg" class="show01">
+                        <img src="IMG/Show02.jpg" class="show02">
+                        <img src="IMG/Show03.jpg" class="show03">
+                        <img src="IMG/Show04.jpg" class="show04">
+                    </div>
+
+                </section>
+
+                <section class="redblock02"></section>
+
+            </article>
+
+    </div>
+
+
+
+        <footer>
+            <img src="IMG/FooterTEXT.svg" class="footer-text" alt="footer text">
+
+            <img src="IMG/Social Icons.svg" class="social-icons" alt="social icons">
+
+        </footer>
+    
+    
+</body>
+
+
+<script>
+var menu=document.getElementById("menu");
+var nav=document.getElementById("nav");
+var exit=document.getElementById("exit");
+
+menu.addEventListener('click', function(e) {
+    nav.classList.toggle('hide-mobile');
+    e.preventDefault();
+});
+
+exit.addEventListener('click', function(e) {
+    nav.classList.add('hide-mobile');
+    e.preventDefault();
+});
+
+function openvideo(aaa){
+      var queryString =  "?"+aaa ;
+      window.location.href = "videoplayer.html" + queryString;
+	  }
+
+</script>
+
+</html>
