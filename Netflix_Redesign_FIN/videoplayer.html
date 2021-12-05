@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Netflix Redesign</title>
+<link rel = "icon" href = "IMG/NetflixNLOGO.svg" type = "image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="\videoplayer.css">
+</head>
+
+<div class="container">
+    <header>
+        <a href="Home.html">
+        <img src="IMG/NetflixLogoFULL.svg" class="logo" alt="logo">
+        </a>
+    <nav>
+        <a href="#" class="hide-desktop">
+        <img src="IMG/Mag.svg" alt="magnifier" class="mag" id="mag">
+        <img src="IMG/HamMENU.svg" alt="toggle menu" class="menu" id="menu">
+        </a>
+
+        <ul class="show-desktop hide-mobile" id="nav">
+
+            <div class="top-menu">
+
+            <li id="search" class="search-btn">
+                <img src="IMG/Mag.svg" href="xxx" alt="search" class="search" id="search">
+            </li>
+            
+            <li id="exit" class="exit-btn hide-desktop">
+                <img src="IMG/Close.svg" alt="close menu">
+            </li>
+
+            </div>
+
+            <li class="Home">
+                <a href="Home.html">Home</a>
+            </li>
+
+            <li class="Shows">
+                <a href="videoplayer.html">Shows &amp; Films</a>
+            </li>
+
+            <li class="Logout">
+                <a href="login.html">Log Out</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+<center>
+	<video id="Videoplace" class="video" controls>
+ 	</video>
+	 <br>
+	
+	<button onclick="play()" class="btn">Play</button>
+	<button onclick="pause()"  class="btn">Pause</button><br> 
+
+</center>
+
+</div>
+
+
+<script> 
+
+var queryString = decodeURIComponent(window.location.search);
+var vedioname = queryString.substring(1);
+var vedioframe = document.getElementById("Videoplace"); 
+
+var menu=document.getElementById("menu");
+var nav=document.getElementById("nav");
+var exit=document.getElementById("exit");
+
+menu.addEventListener('click', function(e) {
+    nav.classList.toggle('hide-mobile');
+    e.preventDefault();
+});
+
+exit.addEventListener('click', function(e) {
+    nav.classList.add('hide-mobile');
+    e.preventDefault();
+});
+
+
+
+function play() { 
+    vedioframe.setAttribute("src", vedioname);
+	vedioframe.play(); 
+} 
+
+function pause() { 
+  vedioframe.pause(); 
+} 
+</script> 
+
+
+</body> 
+</html>
